@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tublanx.bulletinBoard.dao.PostDao">
+	<select id="selectList" parameterType="com.tublanx.bulletinBoard.domain.Post" resultType="com.tublanx.bulletinBoard.domain.Post">
+		SELECT POSTNO
+		     , POSTNAME
+		     , AUTHOR
+		     , CREATEDDATE
+		     , MODIFIEDDATE
+		  FROM POST
+	</select>
+</mapper>
