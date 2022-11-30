@@ -2,10 +2,13 @@ package com.tublanx.bulletinBoard.dao;
 
 import java.util.List;
 
-import com.tublanx.bulletinBoard.domain.Post;
+import org.apache.ibatis.annotations.Mapper;
 
+import com.tublanx.bulletinBoard.domain.PostVO;
+
+@Mapper
 public interface PostDao {
 
-	public List<Post> selectList();
+	public List<PostVO> selectList();
 
 }
