@@ -9,6 +9,10 @@ public class PostVO {
 	private String postName;
 
 	private String author;
+	
+	private String summary;
+	
+	private String description;
 
 	private LocalDateTime createdDate;
 
@@ -32,6 +36,14 @@ public class PostVO {
 
 	public LocalDateTime getModifiedDate() {
 		return modifiedDate;
+	}
+
+	public String getSummary() {
+		return summary;
+	}
+
+	public String getDescription() {
+		return description;
 	}
 
 }
