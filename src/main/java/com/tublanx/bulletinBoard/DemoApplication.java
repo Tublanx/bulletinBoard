@@ -22,7 +22,7 @@ public class DemoApplication {
 		SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean(); // DB와의 연결과 SQL의 실행에 대한 모든 것을 가짐.
 		sessionFactoryBean.setDataSource(dataSource);
 
-		Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mapper.xml");
+		Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml");
 		sessionFactoryBean.setMapperLocations(res);
 
 		return sessionFactoryBean.getObject();
