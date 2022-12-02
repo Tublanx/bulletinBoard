@@ -19,10 +19,10 @@ public class PostController {
 		return "main";
 	}
 
-//	@GetMapping(value = "/main")
-//	public List<PostVO> main() {
-//		List<PostVO> postList = postDao.selectList();
-//		return postList;
-//	}
+	@GetMapping(value = "/main/post_detail")
+	public String postDetail(Model model) {
+		model.addAttribute("posts", postDao.selectList());
+		return "postDetail";
+	}
 
 }
