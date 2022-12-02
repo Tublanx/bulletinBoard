@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default_layout">
 
 <head>
 	<meta charset="utf-8">
@@ -13,7 +14,7 @@
         home, about, credits... or in a good page that you want
         THANK YOU MY FRIEND!
     -->
-	<title>Forum post list - Bootdey.com</title>
+	<title>bullet board</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -284,15 +285,14 @@
 									<div class="forum-icon">
 										<i class="fa fa-bookmark"></i>
 									</div>
-									<a href="forum_post.html" class="forum-item-title" th:text="${post.postName}"></a>
+									<a href="/main/post_detail" class="forum-item-title" th:text="${post.postName}"></a>
 									<div class="forum-sub-title" th:text="${post.summary}"></div>
 								</div>
 								<div class="col-md-2 forum-info">
 									<div>
 										<small>작성일</small>
 									</div>
-									<span class="views-number"
-										th:text="${{post.modifiedDate}}"></span>
+									<span class="views-number" th:text="${{post.modifiedDate}}"></span>
 
 								</div>
 								<div class="col-md-2 forum-info">
@@ -318,6 +318,8 @@
 			</div>
 		</div>
 	</div>
+
+	<th:block th:replace="fragments/footer :: footerFragment"></th:block>
 
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
