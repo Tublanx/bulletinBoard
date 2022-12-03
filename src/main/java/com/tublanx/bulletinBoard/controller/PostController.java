@@ -24,5 +24,15 @@ public class PostController {
 		model.addAttribute("posts", postDao.selectList());
 		return "postDetail";
 	}
+	
+	@GetMapping(value = "/main/new")
+	public String newPost() {
+		return "newPost";
+	}
+	
+	@GetMapping(value = "/settings")
+	public String setting() {
+		return "setting";
+	}
 
 }
