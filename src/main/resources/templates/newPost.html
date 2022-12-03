@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default_layout">
+
+<head>
+	<meta charset="utf-8">
+	<title>bullet board</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<th:block th:replace="~{fragments/header :: headerFragment}"></th:block>
+	<th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+</body>
+
+</html>
