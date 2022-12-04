@@ -3,11 +3,14 @@ package com.tublanx.bulletinBoard.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.tublanx.bulletinBoard.dao.PostDao;
 import com.tublanx.bulletinBoard.domain.PostVO;
+import com.tublanx.bulletinBoard.dto.PostDto;
 import com.tublanx.bulletinBoard.service.PostService;
 
+@Service
 public class PostServiceImpl implements PostService {
 
 	@Autowired
@@ -16,6 +19,11 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public List<PostVO> selectList() {
 		return postDao.selectList();
+	}
+
+	@Override
+	public void addPost(PostDto postDto) {
+		postDao.addPost(postDto);
 	}
 
 }
