@@ -7,4 +7,27 @@
 		SELECT *
 		  FROM POST
 	</select>
+	
+	<insert id="addPost" parameterType="com.tublanx.bulletinBoard.dto.PostDto" useGeneratedKeys="true" keyProperty="postNo">
+		<![CDATA[ 
+			INSERT INTO POST
+			(
+				postName
+			  , author
+			  , createdDate
+			  , modifiedDate
+			  , summary
+			  , description
+			)
+			VALUE
+			(
+				#{postName}
+			  , #{author}
+			  , NOW()
+			  , NOW()
+			  , #{summary}
+			  , #{description}
+			)
+		]]>
+	</insert>
 </mapper>
