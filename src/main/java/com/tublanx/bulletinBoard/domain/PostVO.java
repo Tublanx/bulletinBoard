@@ -9,9 +9,9 @@ public class PostVO {
 	private String postName;
 
 	private String author;
-	
+
 	private String summary;
-	
+
 	private String description;
 
 	private LocalDateTime createdDate;
