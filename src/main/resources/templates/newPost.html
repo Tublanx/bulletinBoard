@@ -23,25 +23,26 @@
 
 					<div class="form-group">
 						<label for="postName">제목 <span class="require">*</span></label>
-						<input type="text" class="form-control" name="postName" />
-						<span th:text="${valid_postName}"></span>
+						<input type="text" class="form-control" name="postName" th:value="${postDto.postName}" />
+						<span th:text="${valid_postName}" style="color: red"></span>
 					</div>
 
 					<div class="form-group">
 						<label for="author">작성자 <span class="require">*</span></label>
-						<input type="text" class="form-control" name="author" />
-						<span th:text="${valid_author}"></span>
+						<input type="text" class="form-control" name="author" th:value="${postDto.author}" />
+						<span th:text="${valid_author}" style="color: red"></span>
 					</div>
 
 					<div class="form-group">
 						<label for="summary">내용 요약 <span class="require">*</span></label>
-						<input type="text" class="form-control" name="summary" />
+						<input type="text" class="form-control" name="summary" th:value="${postDto.summary}" />
 					</div>
 
 					<div class="form-group">
 						<label for="description">내용 <span class="require">*</span></label>
-						<textarea rows="5" class="form-control" name="description" style="resize: vertical"></textarea>
-						<span th:text="${valid_description}"></span>
+						<textarea rows="5" class="form-control" name="description" th:value="${postDto.description}"
+							style="resize: vertical"></textarea>
+						<span th:text="${valid_description}" style="color: red"></span>
 					</div>
 
 					<div class="form-group">
