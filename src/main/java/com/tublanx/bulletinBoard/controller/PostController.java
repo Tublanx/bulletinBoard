@@ -54,14 +54,16 @@ public class PostController {
 
 	@PostMapping(value = "/main/new/addpost.do")
 	public String addPost(@Valid PostDto postDto, Errors errors, Model model) { // postDto 유효성 체크
-		
+
 		if (errors.hasErrors()) {
+			model.addAttribute("postDto", postDto);
+
 			// 유효성 통과 못한 필드와 메시지를 핸들링
 			Map<String, String> validatorResult = postService.validateHandling(errors);
-			for(var key : validatorResult.keySet()) {
+			for (var key : validatorResult.keySet()) {
 				model.addAttribute(key, validatorResult.get(key));
 			}
-			
+
 			return "newPost";
 		}
 
