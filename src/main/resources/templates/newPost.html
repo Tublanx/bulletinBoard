@@ -24,11 +24,13 @@
 					<div class="form-group">
 						<label for="postName">제목 <span class="require">*</span></label>
 						<input type="text" class="form-control" name="postName" />
+						<span th:text="${valid_postName}"></span>
 					</div>
 
 					<div class="form-group">
 						<label for="author">작성자 <span class="require">*</span></label>
 						<input type="text" class="form-control" name="author" />
+						<span th:text="${valid_author}"></span>
 					</div>
 
 					<div class="form-group">
@@ -39,6 +41,7 @@
 					<div class="form-group">
 						<label for="description">내용 <span class="require">*</span></label>
 						<textarea rows="5" class="form-control" name="description" style="resize: vertical"></textarea>
+						<span th:text="${valid_description}"></span>
 					</div>
 
 					<div class="form-group">
