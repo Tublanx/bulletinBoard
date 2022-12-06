@@ -1,9 +1,12 @@
 package com.tublanx.bulletinBoard.serviceImpl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.Errors;
 
 import com.tublanx.bulletinBoard.dao.PostDao;
 import com.tublanx.bulletinBoard.domain.PostVO;
@@ -24,6 +27,18 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public void addPost(PostDto postDto) {
 		postDao.addPost(postDto);
+	}
+
+	@Override
+	public Map<String, String> validateHandling(Errors errors) {
+		Map<String, String> validatorResult = new HashMap<>();
+
+		for (var err : errors.getFieldErrors()) {
+			String validKeyName = String.format("valid_%s", err.getField());
+			validatorResult.put(validKeyName, err.getDefaultMessage());
+		}
+		
+		return validatorResult;
 	}
 
 }
