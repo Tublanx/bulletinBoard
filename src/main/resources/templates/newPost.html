@@ -19,7 +19,7 @@
 
 				<h1>게시글 추가</h1>
 
-				<form name="validForm" action="/main/new/addpost.do" onsubmit="validate();" method="post">
+				<form name="validForm" action="/main/new/addpost.do" onsubmit="return validate();" method="post">
 
 					<div class="form-group">
 						<label for="postName">제목 <span class="require">*</span></label>
@@ -48,8 +48,7 @@
 
 					<div class="form-group">
 						<input type="submit" id="submit" value="저장" class="btn btn-primary">
-						<button type="button" class="btn btn-default" th:onclick="|window.location.href='/cancel'|"
-							onclick="validate()">
+						<button type="button" class="btn btn-default" th:onclick="|window.location.href='/cancel'|">
 							취소
 						</button>
 					</div>
@@ -78,8 +77,6 @@
 				alert("내용은 필수로 적으셔야 합니다.");
 				return false;
 			}
-
-
 		}
 	</script>
 </body>
