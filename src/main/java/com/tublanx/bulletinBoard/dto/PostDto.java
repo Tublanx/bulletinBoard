@@ -2,8 +2,6 @@ package com.tublanx.bulletinBoard.dto;
 
 import java.time.LocalDateTime;
 
-import jakarta.validation.constraints.NotBlank;
-
 public class PostDto {
 
 	private Long postNo;
