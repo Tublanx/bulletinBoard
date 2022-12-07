@@ -29,16 +29,4 @@ public class PostServiceImpl implements PostService {
 		postDao.addPost(postDto);
 	}
 
-	@Override
-	public Map<String, String> validateHandling(Errors errors) {
-		Map<String, String> validatorResult = new HashMap<>();
-
-		for (var err : errors.getFieldErrors()) {
-			String validKeyName = String.format("valid_%s", err.getField());
-			validatorResult.put(validKeyName, err.getDefaultMessage());
-		}
-		
-		return validatorResult;
-	}
-
 }

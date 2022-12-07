@@ -8,15 +8,12 @@ public class PostDto {
 
 	private Long postNo;
 
-	@NotBlank(message = "제목은 필수로 입력하셔야 합니다.")
 	private String postName;
 
-	@NotBlank(message = "작성자는 필수로 입력하셔야 합니다.")
 	private String author;
 
 	private String summary;
 
-	@NotBlank(message = "내용은 필수로 입력하셔야 합니다.")
 	private String description;
 
 	private LocalDateTime createdDate;

@@ -16,6 +16,4 @@ public interface PostService {
 	
 	public void addPost(PostDto postDto);
 	
-	public Map<String, String> validateHandling(Errors errors);
-	
 }
