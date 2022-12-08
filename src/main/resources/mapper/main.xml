@@ -3,11 +3,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.tublanx.bulletinBoard.dao.PostDao">
-	<select id="selectList" parameterType="com.tublanx.bulletinBoard.domain.PostVO" resultType="com.tublanx.bulletinBoard.domain.PostVO">
+	<select id="selectList" resultType="com.tublanx.bulletinBoard.domain.PostVO">
 		SELECT *
 		  FROM POST
 	</select>
-	
+
 	<insert id="addPost" parameterType="com.tublanx.bulletinBoard.dto.PostDto" useGeneratedKeys="true" keyProperty="postNo">
 		<![CDATA[ 
 			INSERT INTO POST
@@ -30,4 +30,14 @@
 			)
 		]]>
 	</insert>
+
+	<select id="getSearchedList" parameterType="String" resultType="com.tublanx.bulletinBoard.domain.PostVO">
+		SELECT *
+		  FROM POST
+		<where>
+			<if test="value != null and value != ''">
+				AND POSTNAME LIKE CONCAT('%', #{value}, '%')
+			</if>
+		</where>
+	</select>
 </mapper>
