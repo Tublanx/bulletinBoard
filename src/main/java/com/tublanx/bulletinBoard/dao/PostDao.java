@@ -13,5 +13,7 @@ public interface PostDao {
 	public List<PostVO> selectList();
 	
 	public void addPost(PostDto postDto);
+	
+	public List<PostVO> getSearchedList(String keyword);
 
 }

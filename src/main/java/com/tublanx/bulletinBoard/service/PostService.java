@@ -9,9 +9,11 @@ import com.tublanx.bulletinBoard.dto.PostDto;
 
 @Service
 public interface PostService {
-	
+
 	public List<PostVO> selectList();
-	
+
 	public void addPost(PostDto postDto);
-	
+
+	public List<PostDto> getSearchedList(String keyword);
+
 }
