@@ -12,13 +12,10 @@
 				<ul class="nav navbar-nav">
 					<li><a href="/main/new">게시글 추가</a></li>
 				</ul>
-				<ul class="nav navbar-nav">
-					<li><a href="/settings">설정</a></li>
-				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<form class="navbar-form navbar-left" role="search">
+					<form class="navbar-form navbar-left" role="search" action="/main/search.do" method="get">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="제목+내용 검색">
+							<input name="keyword" type="text" class="form-control" placeholder="">
 						</div>
 						<button type="submit" class="btn btn-default">검색</button>
 					</form>
