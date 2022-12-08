@@ -2,6 +2,8 @@ package com.tublanx.bulletinBoard.dto;
 
 import java.time.LocalDateTime;
 
+import lombok.Builder;
+
 public class PostDto {
 
 	private Long postNo;
@@ -72,6 +74,16 @@ public class PostDto {
 
 	public void setModifiedDate(LocalDateTime modifiedDate) {
 		this.modifiedDate = modifiedDate;
+	}
+
+	@Builder
+	public PostDto(Long postNo, String postName, String author, String summary, String description, LocalDateTime createdDate) {
+		this.postNo = postNo;
+		this.postName = postName;
+		this.author = author;
+		this.summary = summary;
+		this.description = description;
+		this.createdDate = createdDate;
 	}
 
 }
