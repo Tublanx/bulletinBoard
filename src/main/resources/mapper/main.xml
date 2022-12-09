@@ -31,13 +31,9 @@
 		]]>
 	</insert>
 
-	<select id="getSearchedList" parameterType="String" resultType="com.tublanx.bulletinBoard.domain.PostVO">
+	<select id="getSearchedList" resultType="com.tublanx.bulletinBoard.domain.PostVO">
 		SELECT *
 		  FROM POST
-		<where>
-			<if test="value != null and value != ''">
-				AND POSTNAME LIKE CONCAT('%', #{value}, '%')
-			</if>
-		</where>
+		 WHERE POSTNAME LIKE CONCAT('%', #{keyword}, '%')
 	</select>
 </mapper>
