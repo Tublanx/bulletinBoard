@@ -1,8 +1,11 @@
 package com.tublanx.bulletinBoard.serviceImpl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,6 +54,7 @@ public class PostServiceImpl implements PostService {
 				.summary(postVO.getSummary())
 				.description(postVO.getDescription())
 				.createdDate(postVO.getCreatedDate())
+				.modifiedDate(postVO.getModifiedDate())
 				.build();
 	}
 
