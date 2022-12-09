@@ -20,6 +20,9 @@ public class PostDto {
 
 	private LocalDateTime modifiedDate;
 
+	public PostDto() {
+	}
+
 	public Long getPostNo() {
 		return postNo;
 	}
@@ -77,13 +80,15 @@ public class PostDto {
 	}
 
 	@Builder
-	public PostDto(Long postNo, String postName, String author, String summary, String description, LocalDateTime createdDate) {
+	public PostDto(Long postNo, String postName, String author, String summary, String description,
+			LocalDateTime createdDate, LocalDateTime modifiedDate) {
 		this.postNo = postNo;
 		this.postName = postName;
 		this.author = author;
 		this.summary = summary;
 		this.description = description;
 		this.createdDate = createdDate;
+		this.modifiedDate = modifiedDate;
 	}
 
 }
