@@ -272,7 +272,8 @@
 									<div class="forum-icon">
 										<i class="fa fa-bookmark"></i>
 									</div>
-									<a href="/main/post_detail" class="forum-item-title" th:text="${post.postName}"></a>
+									<a href="/main/postDetail?postNo=" th:attrappend="href=${post.postNo}"
+										class="forum-item-title" th:text="${post.postName}"></a>
 									<div class="forum-sub-title" th:text="${post.summary}"></div>
 								</div>
 								<div class="col-md-2 forum-info">
