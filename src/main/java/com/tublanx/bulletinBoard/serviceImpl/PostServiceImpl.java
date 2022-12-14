@@ -58,4 +58,9 @@ public class PostServiceImpl implements PostService {
 				.build();
 	}
 
+	@Override
+	public PostDto selListByNo(int postNo) {
+		return postDao.selListByNo(postNo);
+	}
+
 }

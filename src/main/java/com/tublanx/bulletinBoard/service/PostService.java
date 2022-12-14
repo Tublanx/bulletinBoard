@@ -16,4 +16,6 @@ public interface PostService {
 
 	public List<PostDto> getSearchedList(String keyword);
 
+	public PostDto selListByNo(int postNo);
+	
 }

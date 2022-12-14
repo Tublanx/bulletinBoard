@@ -16,4 +16,6 @@ public interface PostDao {
 	
 	public List<PostVO> getSearchedList(String keyword);
 
+	public PostDto selListByNo(int postNo);
+
 }
