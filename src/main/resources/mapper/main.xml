@@ -36,4 +36,12 @@
 		  FROM POST
 		 WHERE POSTNAME LIKE CONCAT('%', #{keyword}, '%')
 	</select>
+	
+	<select id="selListByNo" parameterType="int" resultType="com.tublanx.bulletinBoard.dto.PostDto">
+		<![CDATA[ 
+			SELECT *
+			  FROM POST
+			 WHERE POSTNO = ${postNo}
+		]]>
+	</select>
 </mapper>
